@@ -20,20 +20,20 @@ If you want to locate a file in another directory, pass the `cwd` option:
 
 ```js
 miniglob('**/package.json', { cwd: '/path/where/you/are/looking' }, function(err, matches) {
-	console.log(matches);
+  console.log(matches);
 });
 ```
 
-miniglob also fires on matches:
+miniglob also fires `match` events:
 
-```
+```js
 miniglob('**/package.json').on('match', console.log);
 ```
 
-and on end:
+and also `end` events:
 
-```
+```js
 miniglob('**/package.json').on('end', function(matches) {
-	console.log(matches);
+  console.log(matches);
 });
 ```
